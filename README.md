@@ -5,14 +5,11 @@ These masks can be used for password cracking research, security analysis purpos
 
 ## Files Included
 
-- `mask_1_placeholder.txt`: Hashcat masks with 1 placeholder.
-  - This represents the most possible passwords based on Indian names.
-- `mask_2_placeholders.txt`: Hashcat masks with 2 placeholders.
-- `mask_3_placeholders.txt`: Hashcat masks with 3 placeholders.
 - `mask_4_placeholders.txt`: Hashcat masks with 4 placeholders.
 - `mask_5_placeholders.txt`: Hashcat masks with 5 placeholders.
 - `mask_6_placeholders.txt`: Hashcat masks with 6 placeholders.
 - `all_masks_combined.txt`: All masks combined into one file.
+- - This represents the most possible passwords based on Indian names.
 - `mask_4_5_6_placeholders.txt`: Masks for placeholders 4, 5, and 6.
 
 ## How to Use
