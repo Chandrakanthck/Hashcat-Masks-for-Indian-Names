@@ -1,7 +1,7 @@
 # Hashcat Masks for All Indian Names
 
 This repository contains a collection of **Hashcat masks** generated from Indian names.
-These masks can be used for password cracking research, security analysis purposes.
+These masks can be used for password cracking research, security analysis, and ethical hacking purposes.
 
 ## Files Included
 
@@ -17,49 +17,45 @@ These masks can be used for password cracking research, security analysis purpos
 
 ## How to Use
 
-You can use these masks in **Hashcat** for password cracking by specifying the mask file.
-Example command:
+### Using Hashcat with the Provided Masks
+
+You can use these masks in **Hashcat** for password cracking by specifying the mask file. Modify the settings according to your needs, such as the hash type and the custom charset (?1).
+### Example Command:
 
 ```sh
 hashcat -m 0 -a 3 hash.txt output_1.txt --force
 ```
 
-## How to Clone and Push to GitHub
+### Using executemask.bat
 
-To upload this project to GitHub, follow these steps:
+A batch file (`executemask.bat`) is included to automate the Hashcat execution process. It reads masks from `masks.txt` and runs them against the hash file. 
 
-1. Initialize Git:
+#### Configuration:
+- **Hash file:** Change `hash.hc22000` to your actual hash file. Example:
+  ```sh
+  set HASH_FILE=myhashes.txt
+  ```
+- **Attack mode and hash type:** Modify `-m 22000` for WPA hashes. If using other hash types, use the appropriate mode:
+  - MD5: `-m 0`
+  - SHA-1: `-m 100`
+  - SHA-256: `-m 1400`
+  - SHA-512: `-m 1700`
+  - CRC32: `-m 11500`
+  - XXH32: `-m 16200`
+  - XXH64: `-m 16210`
+- **Custom charset (?1):** Change `0123456789!@#_.*` if needed. Example:
+  ```sh
+  set CHARSET=-1 abcdefghijklmnopqrstuvwxyz0123456789!@#_.*
+  ```
 
+Run the batch file by double-clicking `executemask.bat` or using:
 ```sh
-git init
+cmd /c executemask.bat
 ```
 
-2. Add the files:
+The script will attempt all masks and stop if a password is cracked. The cracked password (if found) will be saved in `cracked.txt`. 🚀
 
-```sh
-git add .
-```
+You can now download the files individually from this repository on GitHub! 🚀
 
-3. Commit the files:
 
-```sh
-git commit -m "Initial commit - Added Hashcat masks for Indian names"
-```
-
-4. Create a GitHub repository [here](https://github.com/new) and get the repository URL.
-
-5. Add the remote origin:
-
-```sh
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
-
-6. Push the files:
-
-```sh
-git branch -M main
-git push -u origin main
-```
-
-You can now access these files on GitHub and use them for password cracking research.
 
